@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未命名</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/yanse.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a id="eye" href="#eye">显示密码</a>
+        <input type="password" id="pwd">
+    </div>
+    <script>
+        // 1.获取元素
+        var eye = document.getElementById('eye');
+        var pwd = document.getElementById('pwd');
+        // 2.注册事件
+        var flag = 0;
+        eye.onclick = function () {
+            if (flag == 0) {
+                pwd.type = 'text';
+                eye.innerHTML = '隐藏密码';
+                flag = 1;
+            } else {
+                pwd.type = 'password';
+                eye.innerHTML = '显示密码';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

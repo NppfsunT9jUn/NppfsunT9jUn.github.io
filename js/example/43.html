@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未命名</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/yanse.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>错误</div>
+    <img src="">
+    <script>
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        var date = new Date();
+        var h = date.getHours();
+        if (h < 12) {
+            img.src = 'https://url.cy/WhUPj3';
+            div.innerHTML = '上午好'
+            console.log('上午时间');
+        } else if (h < 18) {
+            img.src = 'https://url.cy/XvQDk3';
+            div.innerHTML = '下午好';
+            console.log('下午时间');
+        } else {
+            img.src = 'https://url.cy/sIb5K2';
+            div.innerHTML = '晚上好';
+            console.log('晚上时间');
+        }
+    </script>
+</body>
+
+</html>

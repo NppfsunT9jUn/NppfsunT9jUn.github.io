@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/yanse.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        // 按照从大到小判断的思路
+        // 弹出 prompt 输入框，让用户输入分数，把这个值取过来保存到变量中
+        // 使用多分支 if else if 语句来分别判断输出不同的值
+        var score = prompt('请输入您的分数：');
+        if (score >= 90) {
+            alert('宝贝，你是我的骄傲');
+        } else if (score >= 80) {
+            alert('宝贝，你已经很不错了');
+        } else if (score >= 70) {
+            alert('继续加油吧');
+        } else if (score >= 60) {
+            alert('你差点就不及格啦');
+        } else if (score >= 30) {
+            alert('你不及格啦');
+        } else if (score >= 1) {
+            alert('考这么点？你不配活着！');
+        } else if (score == 0) {
+            alert('你死了算了');
+        } else {
+            alert('请输入 0-100 正确数字');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

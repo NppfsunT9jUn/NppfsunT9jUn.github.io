@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未命名</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/yanse.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        #box div {
+            background-color: black;
+            text-align: center;
+            color: white;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <i id="close">x</i>
+        <div>我是小广告</div>
+    </div>
+    <script>
+        var box = document.querySelector('#box');
+        var close = document.querySelector('#close');
+        close.onclick = function () {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

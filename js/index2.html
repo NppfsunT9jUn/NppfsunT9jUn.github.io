@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS教程第2重点版-第二章</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/yanse.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <button><a href="index.html">上一节</a></button>
+    <button><a href="index3.html">下一节</a></button>
+    <h2>数组的概念</h2>
+    <p>问：之前学习的变量，只能存储一个值。如果我们想存储班级中所有学生的姓名，那么该如何储存呢？</p>
+    <p>答：可以使用数组(Array)。数组可以把一组相关的数据一起存放，并且提供方便的访问(获取)方式</p>
+    <p>问：什么是数组呢？</p>
+    <p>答：数组是指一组数据的集合，其中的每个数据被称作元素，再数组中可以存放任意类型的元素。数组是一种将一组数据存储在单个变量名下的优雅方式</p>
+    <p class="y">
+        // 普通变量一次只能存储一个值 <br />
+        var num = 10; <br />
+        // 数组一次可以存储多个值 <br />
+        var arr = [1,2,3,4,5];
+    </p>
+    <p>数组(Array)就是一组数据的集合，存储在单个变量下的优雅方式</p>
+    <h2>数组的创建方式</h2>
+    <p>JS 中创建数组有两种方式：</p>
+    <ul>
+        <li>利用 new 创建数组</li>
+        <li>利用数组字面量创建数组</li>
+    </ul>
+    <h3>利用 new 创建数组</h3>
+    <p class="y">
+        var 变量名 = new Array();
+    </p>
+    <p>创建了一个空数组</p>
+    <ul>
+        <li>这种方式暂且了解，等学完对象再看</li>
+        <li>注意 Array() A要大写</li>
+    </ul>
+    <h3>利用数组字面量创建数组</h3>
+    <p>使用数组字面量方式创建空的数组</p>
+    <p class="y">
+        var 变量名 = [];
+    </p>
+    <p>也是创建了一个空数组</p>
+    <p>数组里面的数据一定要用逗号分隔：</p>
+    <p class="y">
+        var arr1 = [1, 2, 'pink老师', true];
+    </p>
+    <p>数组里面的元素比如说：1, 2 我们称为数组元素</p>
+    <ul>
+        <li>数组的字面量是方括号[]</li>
+        <li>声明数组并赋值称为数组的初始化</li>
+        <li>这种字面量方式也是我们以后最多使用的方式</li>
+    </ul>
+    <h3>数组元素的类型</h3>
+    <p>数组中可以存放任意类型的数据，例如字符串，数字，布尔值等</p>
+    <p class="y">
+        var arrStus = ['小白',12,true,28.9];
+    </p>
+    <p>控制台会输出全部4个数组：</p>
+    <p class="y">
+        var arr1 = [1, 2, 'pink老师', true]; <br />
+        console.log(arr1);
+    </p>
+    <p>但是，在开发里面，需要获取数组里面的元素，请看下一级</p>
+    <h2>数组的索引</h2>
+    <p>索引也称下标，用来访问数组元素的序号（数组下表从0开始）</p>
+    <p class="y">
+        var arr = ['小白','小黑','大黄','瑞奇'];
+    </p>
+    <p>索引号：0 1 2 3 依次排列</p>
+    <p>数组可以通过索引来访问、设置、修改对应的数组元素，我们可以通过“数组名[索引]”的形式来获取数组中的元素</p>
+    <p>这里的访问就是获取得到的意思</p>
+    <p>获取数组元素：格式 数组名[索引号];</p>
+    <p class="y">
+        var arr = ['小白','小黑','大黄','瑞奇']; <br />
+        console.log(arr[2]);
+    </p>
+    <p>结果：大黄</p>
+    <p>如果是 <span class="d">console.log(arr1[3]);</span> 的话结果是：瑞奇</p>
+    <p>但是如果这样写的话：</p>
+    <p class="y">
+        var arr = ['小白','小黑','大黄','瑞奇']; <br />
+        console.log(arr[4]);
+    </p>
+    <p>结果：undefind</p>
+    <p>一定要记住：索引号从 0 开始</p>
+    <p>案例：数组练习 <button><a href="example/21.html">点我跳转</a></button></p>
+    <h2>遍历数组</h2>
+    <p>遍历：就是把数组中的每个元素从头到尾都访问一次（类似我们每天早上学生的点名）</p>
+    <p class="y">
+        var arr = ['red', 'green', 'blue']; <br />
+        for (var i = 0; i &lt; 3; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(arr[i]); <br />
+        }
+    </p>
+    <p>因为数组索引号从 0 开始，所以 i 必须从 0 开始 i &lt; 3 输出的时候 arr[i] i 计数器当索引号来用</p>
+    <p>遍历数组案例：<button><a href="example/22.html">点我跳转</a></button></p>
+    <h2>数组的长度</h2>
+    <p>使用 "数组名.length" 可以访问数组元素的数量 (数组长度)</p>
+    <p class="y">
+        var arr = ['关羽', '张飞', '马超', '赵云', '黄忠', '刘备', '姜维']; <br />
+        console.log(arr.length);
+    </p>
+    <p>结果：7</p>
+    <p>也有更简单的写法：</p>
+    <p class="y">
+        var arr = ['关羽', '张飞', '马超', '赵云', '黄忠', '刘备', '姜维', '其他']; <br />
+        for (var i = 0; i &lt; arr.length; i++) { <br />
+        console.log(arr[i]); <br />
+        }
+    </p>
+    <p>结果：8</p>
+    <p>因为 <span class="d">arr.length</span> 是动态检测数组元素的个数</p>
+    <p>遍历数组案例：<button><a href="example/23.html">计算数组的和及平均值</a></button></p>
+    <h3>案例：求数组中的最大值 (重点)</h3>
+    <p class="y">
+        var arr = [2, 6, 1, 77, 52, 25, 7]; <br />
+        var max = arr[0]; <br />
+        for (var i = 1; i &lt; arr.length; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;if (arr[i] > max) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = arr[i]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        } <br />
+        console.log('该数组里面的最大值是：' + max);
+    </p>
+    <p><button><a href="example/24.html">求数组中的最大值</a></button></p>
+    <h3>案例：数组转换为分隔字符串</h3>
+    <p>要求：将数组 ['red','green','blue','pink'] 转换为字符串，并且用 | 或其他符号分隔</p>
+    <p>输出：'red|green|blue|pink|'</p>
+    <p><b>案例分析：</b></p>
+    <ul>
+        <li>需要一个新变量用于存放转换完的字符串 str</li>
+        <li>遍历原来的数组，分别把里面数据取出来，加到字符串里面</li>
+        <li>同时在后面多加一个分隔符</li>
+    </ul>
+    <p class="y">
+        var arr = ['red', 'green', 'blue', 'pink']; <br />
+        var str = ''; <br />
+        var sep = '|'; <br />
+        for (var i = 0; i &lt; arr.length; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;str += arr [i] + sep; <br />
+        } <br />
+        console.log(str);
+    </p>
+    <p>实例：<button><a href="example/25.html">数组转换为分割字符串</a></button></p>
+    <h2>通过修改 length 长度新增数组元素</h2>
+    <ul>
+        <li>可以通过修改 length 长度来实现数组扩容目的</li>
+        <li>length 属性是可读写的</li>
+    </ul>
+    <p>实例：</p>
+    <p class="y">
+        var arr = ['red', 'green', 'blue']; <br />
+        console.log(arr.length); <br />
+        arr.length = 5;
+    </p>
+    <p>但是第 3 4 个元素是 undefined</p>
+    <h2>通过修改数组索引新增数组元素</h2>
+    <p>实例：</p>
+    <p class="y">
+        var arr1 = ['red', 'green', 'blue']; <br />
+        arr1[3] = 'pink'; <br />
+        console.log(arr1);
+    </p>
+    <p>这是一种比较常用的方法，叫做 "追加数组元素"</p>
+    <p>可以替换原先数组里面的元素：</p>
+    <p class="y">
+        var arr2 = ['red', 'green', 'blue']; <br />
+        arr2[0] = 'yellow'; <br />
+        console.log(arr2);
+    </p>
+    <p>结果：['yellow', 'green', 'blue'];</p>
+    <p><span class="z">注意：</span>不要直接给数组名赋值，否则里面的数组元素都没有了</p>
+    <h2>案例：数组新增元素</h2>
+    <p>新建一个数组，里面存放10个整数 (1~10`)</p>
+    <h3>案例分析</h3>
+    <ol>
+        <li>使用循环来追加数组</li>
+        <li>声明一个空数组 arr</li>
+        <li>循环中计数器 i 可以作为数组元素存入</li>
+        <li>由于数组的索引号是从0开始的，因此计数器从0开始更合适，存入的数组元素要 +1</li>
+    </ol>
+    <p class="y">
+        var arr = []; <br />
+        for (var i = 0; i &lt; 10; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;arr[i] = i + 1; <br />
+        } <br />
+        console.log(arr);
+    </p>
+    <p>实例：<button><a href="example/26.html">数组存放实例</a></button></p>
+    <h2>案例：筛选数组</h2>
+    <p>要求：将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中大于等于10的元素选出来，放入新数组。</p>
+    <h3>案例分析</h3>
+    <ol>
+        <li>声明一个新的数组用于存放新数据 <span class="d">newArr</span></li>
+        <li>遍历原来的旧数组，找出大于等于10的元素</li>
+        <li>一次追加给新数组 <span class="d">newArr</span></li>
+    </ol>
+    <p>方法一：</p>
+    <p class="y">
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]; <br />
+        var newArr = []; <br />
+        var j = 0; <br />
+        for (var i = 0; i &lt; arr.length; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;if (arr[i] > 10) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newArr[j] = arr[i]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        } <br />
+        console.log(newArr);
+    </p>
+    <p>方法二：</p>
+    <p class="y">
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]; <br />
+        var newArr = []; <br />
+        for (var i = 0; i &lt; arr.length; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;if (arr[i] &gt;= 10) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newArr[newArr.length] = arr[i]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        } <br />
+        console.log(newArr);
+    </p>
+    <p>案例：<button><a href="example/27.html">筛选数组案例</a></button></p>
+    <p>案例：<button><a href="example/27-1.html">筛选数组案例-方法二</a></button></p>
+    <p>懂了吗？懂了的话你会说一声: "妙~~啊~~~"</p>
+    <p>其他案例：
+        <button><a href="example/28.html">去掉数组里面的0</a></button>
+        <button><a href="example/29.html">翻转数组</a></button>
+        <button><a href="example/30.html">冒泡排序</a></button>
+    </p>
+    <h2>函数的使用</h2>
+    <p>函数在使用时分为两步：声明函数和调用函数。</p>
+    <h3>声明函数</h3>
+    <p>语法结构：</p>
+    <p class="y">
+        function 函数名() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;//函数体 <br />
+        }
+    </p>
+    <p>以下就是最简单的函数</p>
+    <p class="y">
+        function sayHi() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hi~~'); <br />
+        }
+    </p>
+    <p><span class="d">function</span> 是声明函数的关键字，注意全部小写</p>
+    <p>函数是做某件事情，函数名一般是动词 sayHi</p>
+    <p>函数不调用自己不执行</p>
+    <h3>调用函数</h3>
+    <p>调用函数名来执行函数体代码</p>
+    <p class="y">
+        function 函数名() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;//函数体 <br />
+        } <br />
+        函数名();
+    </p>
+    <p><span class="z">注意：</span> 一定不要忘了加小括号</p>
+    <h3>案例：利用函数计算1-100之间的累加和</h3>
+    <p>1.声明函数</p>
+    <p class="y">
+        function getSum() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var sum = 0; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;for (var i = 1; i &lt;= 100; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += i; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(sum); <br />
+        }
+    </p>
+    <p>2.调用函数</p>
+    <p class="y">
+        getSum();
+    </p>
+    <p>案例：<button><a href="example/31.html">利用函数封装求1-100的和</a></button></p>
+    <h2>形参和实参</h2>
+    <p>在声明函数时，可以在函数名称后面的小括号中添加一些参数，这些参数被称为形参，而在调用函数时，同样也需要传递相应的参数，这些参数被称为实参</p>
+    <table>
+        <tr>
+            <th>参数</th>
+            <th>说明</th>
+        </tr>
+        <tr>
+            <td>形参&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>形式上的参数 函数定义的时候 传递的参数 当前并不知道是什么</td>
+        </tr>
+        <tr>
+            <td>实参&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>实际上的参数 函数调用的时候传递的参数 实参时传递给形参的</td>
+        </tr>
+    </table>
+    <p>我们可以利用函数的参数实现函数重复不同的代码</p>
+    <p class="y">
+        function 函数名(形参1, 形参2...) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+        }
+    </p>
+    <p>在声明函数的小括号里面是形参（形式上的参数）</p>
+    <p class="y">
+        参数名(实参,实参2...);
+    </p>
+    <p>在函数调用的小括号里面是实参（实际的参数）</p>
+    <p>形参和实参的执行过程</p>
+    <p class="y">
+        function cook(aru) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(aru); <br />
+        } <br />
+        cook('酸辣土豆丝');
+    </p>
+    <p>结果：'酸辣土豆丝' </p>
+    <p>形参是接受实参的 aru = '酸辣土豆丝' 形参类似于一个变量</p>
+    <p class="y">
+        function cook(aru) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(aru); <br />
+        } <br />
+        cook('酸辣土豆丝'); <br />
+        cook('大肘子');
+    </p>
+    <p>结果：输出一个 '酸辣土豆丝' 再输出一个 '大肘子'</p>
+    <p>这就等于执行了两遍</p>
+    <p><span class="t">提示：</span>函数的参数可以有也可以没有，个数不限</p>
+    <h3>两个案例：</h3>
+    <p>利用函数求任意两个数的和</p>
+    <p class="y">
+        function getSum(num1, num2) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num1 + num2); <br />
+        } <br />
+        getSum(1, 3);
+    </p>
+    <p>利用函数求任意两个数之间的和</p>
+    <p class="y">
+        function getSums(start, end) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var sum = 0; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;for (var i = start; i &lt;= end; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += i; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(sum); <br />
+        } <br />
+        getSums(1, 100);
+    </p>
+    <p>案例：<button><a href="example/32.html">利用函数求任意两个数的和</a></button></p>
+    <h3>函数形参和实参个数不匹配问题</h3>
+    <table>
+        <tr>
+            <th>参数个数</th>
+            <th>说明</th>
+        </tr>
+        <tr>
+            <td>实参个数等于形参个数</td>
+            <td>输出正确结果</td>
+        </tr>
+        <tr>
+            <td>实参个数多于形参个数</td>
+            <td>只取到形参个数</td>
+        </tr>
+        <tr>
+            <td>实参个数小于形参个数</td>
+            <td>多的形参定义为 undefined 结果为 NaN</td>
+        </tr>
+    </table>
+    <h2>return 语句</h2>
+    <p>有时候，我们会希望函数将值返回给调用者，此视通过使用 return 语句就可以实现</p>
+    <p class="y">
+        function 函数名() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return 需要返回的结果; <br />
+        } <br />
+        函数名();
+    </p>
+    <p>我们函数只是实现某种功能，最终的结果需要返回给函数调用者函数名() 通过 return 实现的</p>
+    <p>只要函数遇到 return 就把后面的结果返回给函数的调用者 函数名() = return 后面的结果</p>
+    <p>代码验证：</p>
+    <p class="y">
+        function getResult() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return 666; <br />
+        } <br />
+        getResult(); <br />
+        console.log(getResult());
+    </p>
+    <p>求两个数的和</p>
+    <p class="y">
+        function getSum(num1, num2) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return num1 + num2; <br />
+        } <br />
+        console.log(getSum(1, 2));
+    </p>
+    <p>这样做才算一个完美意义上的写法</p>
+    <h3>两个案例：</h3>
+    <p>利用函数求任意两个数的最大值</p>
+    <p class="y">
+        function getMax(num1, num2) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;if (num1 &gt; num2) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num1; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} else { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num2; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        } <br />
+        console.log(getMax(1, 3));
+    </p>
+    <p>结果：3</p>
+    <p>也可以这样写：</p>
+    <p class="y">
+        function getMax(num1, num2) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return num1 &gt; num2 ? num1 : num2; <br />
+        } <br />
+        console.log(getMax(1, 3));
+    </p>
+    <p>利用函数求任意一个数组中的最大值</p>
+    <p>求数组 [5, 2, 99, 101, 67, 77] 中最大数值</p>
+    <p class="y">
+        function getArrMax(arr) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var max = arr[0]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;for(var i = 1; i &lt;= arr.length; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (arr[i] &gt; max) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = arr[i]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return max; <br />
+        } <br />
+        var re = getArrMax([5, 2, 99, 101, 67, 77]); <br />
+        console.log(re);
+    </p>
+    <p>在实际开发里面，我们经常用一个变量来接收函数的返回结果使用更简单</p>
+    <h2>return 终止函数</h2>
+    <p>return 语句之后的代码不被执行</p>
+    <p class="y">
+        function getSum(num, num2) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return num1 + num2; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;alert('我是不会被执行的哦！'); <br />
+        } <br />
+        console.log(getSum(1, 2));
+    </p>
+    <p>结果：3</p>
+    <p>return 后面的代码不会被执行</p>
+    <p>return 只能返回一个值</p>
+    <p class="y">
+        function fn(num1, num2) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return num1, num2; <br />
+        } <br />
+        console.log(fn(1, 2));
+    </p>
+    <p>结果：2</p>
+    <p>它返回的结果是最后一个值</p>
+    <p>我们求任意两个数的加减乘数结果</p>
+    <p class="y">
+        function getResult(num1, num2) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return [num1 + num2, num1 - num2, num1 * num2, num1 / num2]; <br />
+        } <br />
+        var re = getResult(1, 2); <br />
+        console.log(re);
+    </p>
+    <h2>break, continue, return 的区别</h2>
+    <ul>
+        <li>break: 结束当前的循环体 (如 for、while)</li>
+        <li>continue: 跳出本次循环，继续执行下次循环 (如 for、while)</li>
+        <li>return: 不仅可以跳出循环，还能够返回 return 语句中的值，同时还可以结束当前的函数体内的代码</li>
+    </ul>
+    <h2>arguments 的使用</h2>
+    <p>当我们不确定多少个参数传递的适合，可以用 arguments 来获取。在 JavaScript 中 arguments 实际上它是当前函数的一个内置对象。所有函数都内置了一个 arguments 对象，arguments
+        对象中储存了传递的所有实参。</p>
+    <p>arguments 的使用</p>
+    <p class="y">
+        function fn() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(arguments); <br />
+        } <br />
+        fn(1, 2, 3);
+    </p>
+    <p>结果：[1, 2, 3];</p>
+    <p>arguments 可以存储数据，用户输入几个就存储几个</p>
+    <p>我们可以按照数组的方式遍历 arguments</p>
+    <p class="y">
+        function fn() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; arguments.length; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(arguments[i]); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        }
+    </p>
+    <p>当你也不知道用户需要储存多少个数值的时候，arguments 就有用了，它可以存储一个或多个数值</p>
+    <h3>案例：利用函数求任意两个数的最大值</h3>
+    <p>代码：</p>
+    <p class="y">
+        function getMax() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var max = arguments[0]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;for (var i = 1; i &lt; arguments.length; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (arguments[i] &gt; max) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = arguments[i]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return max; <br />
+        } <br />
+        console.log(getMax(1, 2, 3)); <br />
+        console.log(getMax(1, 2, 3, 4, 5)); <br />
+        console.log(getMax(11, 2, 34, 444, 5, 100));
+    </p>
+    <p>结果：3 5 444</p>
+    <p>这样就可以利用 arguments 求任意数值的最大值。实例：<button><a href="example/33.html">点我跳转</a></button></p>
+    <h3>案例：利用函数翻转数组</h3>
+    <p>代码：</p>
+    <p class="y">
+        function reverse(arr) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var newArr = []; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;for (var i = arr.length - 1; i &gt;= 0; i--) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newArr[newArr.length] = arr[i]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return newArr; <br />
+        } <br />
+        var arr1 = reverse([1, 3, 4, 6, 9]); <br />
+        console.log(arr1); <br />
+        var arr2 = reverse(['red', 'pink', 'blue']); <br />
+        console.log(arr2);
+    </p>
+    <p>实例：<button><a href="example/34.html">利用函数翻转数组</a></button></p>
+    <h3>案例：利用函数冒泡排序 sort 排序</h3>
+    <p>代码：</p>
+    <p class="y">
+        function sort(arr) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; arr.length - 1; i++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var j = 0; j &lt; arr.length - i - 1; j++) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (arr[j] &gt; arr[j + 1]) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var temp =
+        arr[j]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j] = arr[j +
+        1]; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j + 1] =
+        temp; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return arr; <br />
+        } <br />
+        var arr1 = sort([1, 4, 2, 9]); <br />
+        console.log(arr1);
+    </p>
+    <p>实例：<button><a href="example/35.html">点我跳转</a></button></p>
+    <h3>案例：利用函数判断闰年</h3>
+    <p>代码：</p>
+    <p class="y">
+        function isRunYear(year) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var flag = false; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flag = true <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return flag; <br />
+        } <br />
+        console.log(isRunYear(2000));
+    </p>
+    <p>如果结果是 true 就是闰年</p>
+    <p>实例：<button><a href="example/36.html">点我跳转</a></button></p>
+    <h2>函数是可以相互调用的</h2>
+    <p>fn1 和 fn2 互相调用</p>
+    <p class="y">
+        function fn1() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(11); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;fn2(); <br />
+        } <br />
+        fn1(); <br />
+        <br />
+        function fn2() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(22); <br />
+        }
+    </p>
+    <h2>案例：输出年份的2月份天数</h2>
+    <p>利用函数相互调用组成代码</p>
+    <p class="y">
+        // 用户输入年份，输出当前年份2月份的天数 <br />
+        function backDay() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var year = prompt('请您输入年份:'); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;if (isRunYear(year)) { // 调用函数需要加小括号 <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('当前年份是闰年2月份有29天'); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} else { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('当前年份是平年2月份有28天'); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        } <br />
+        backDay(); <br />
+        <br />
+        <br />
+        // 判断是否为闰年的函数 <br />
+        function isRunYear(year) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;// 如果是闰年我们返回 true 否则 返回 false <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var flag = false; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flag = true; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return flag; <br />
+        }
+    </p>
+    <p>实例：<button><a href="example/37.html">点我跳转</a></button></p>
+    <h2>函数中的两种声明方式</h2>
+    <p>利用函数关键字自定义函数(命名函数)</p>
+    <p class="y">
+        function fn() { <br />
+        <br />
+        } <br />
+        fn();
+    </p>
+    <p>函数表达式(匿名函数)</p>
+    <p class="y">
+        var fun = function(aru) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log('我是函数表达式'); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(aru); <br />
+        <br />
+        } <br />
+        fun('pink老师');
+    </p>
+    <p>fun是变量名 不是函数名</p>
+    <p>函数表达式声明方式跟声明变量差不多，只不过变量里面存的是值 而 函数表达式里面存的是函数</p>
+    <p>函数表达式也可以进行传递参数</p>
+    <h2>JavaScript 作用域</h2>
+    <p>JavaScript 作用域就是代码名字在某个范围内起作用和效果，目的是为了提高程序的可靠性更重要的是减少命名冲突</p>
+    <h3>全局作用域</h3>
+    <p>全局作用域就是整个 script 标签，或者是一个单独的 JS 文件</p>
+    <p>比如说一个页面的一段 JS 代码，就是全局作用域</p>
+    <p class="y">
+        var num = 10;
+    </p>
+    <h3>局部作用域</h3>
+    <p>局部作用域(也叫函数作用域)在函数内部就是局部作用域，这个代码的名字只在函数内部起效果和作用</p>
+    <p>局部作用域就是在函数里面的作用域：</p>
+    <p class="y">
+        function fn() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;// 局部作用域 <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num = 20; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        } <br />
+        fn();
+    </p>
+    <p>全局作用域和局部作用域不会互相影响</p>
+    <h2>全局变量和局部变量</h2>
+    <p>根据作用域的不同我们变量分为全局变量和局部变量</p>
+    <h3>全局变量</h3>
+    <p>num 就是一个全局变量</p>
+    <p class="y">
+        var num = 10; <br />
+        console.log(num);
+    </p>
+    <p>全局变量可以在函数中使用</p>
+    <p class="y">
+        var num = 10; <br />
+        function fn() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        } <br />
+        fn();
+    </p>
+    <p>以上结果为：10</p>
+    <h3>局部作用域</h3>
+    <p>局部变量就是在局部作用域下的变量，后者在函数内部的变量就是局部变量</p>
+    <p class="y">
+        function fun() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num1 = 10; <br />
+        } <br />
+        console.log(num1);
+    </p>
+    <p>结果：Uncaught ReferenceError: num1 is not defind</p>
+    <p>事实证明，局部作用域是不能在全局作用域中使用的</p>
+    <p><span class="z">注意：</span>如果在函数内部没有声明直接赋值的变量也属于全局变量</p>
+    <p class="y">
+        function fun() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;num2 = 20 <br />
+        } <br />
+        console.log(num2);
+    </p>
+    <p>结果：20</p>
+    <p>函数的形参也可以看作是局部变量</p>
+    <p>从执行效率来看全局变量和局部变量：</p>
+    <ul>
+        <li>全局变量只有浏览器关闭的时候才会销毁，比较占用内存资源</li>
+        <li>局部变量当我们程序执行完毕就会销毁，比较节约内存资源</li>
+    </ul>
+    <h2>JavaScript 没有块级作用域</h2>
+    <p>JavaScript 的作用域：全局作用域、局部作用域、现阶段我们 JS 没有块级作用域</p>
+    <p>我们 JS 也是在 es6 的时候新增的块级作用域</p>
+    <p>块级作用域 {} | if {} | for {}</p>
+    <p>使用花括号的写的变量都可以使用</p>
+    <p class="y">
+        if (3 &lt; 5) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num = 10; <br />
+        } <br />
+        console.log(num);
+    </p>
+    <h3>作用域链</h3>
+    <p>作用域链：内部函数访问外部函数的变量，采取的是链式查找的方式来决定取那个值，这种结构我们称为作用域链，就近原则</p>
+    <p class="y">
+        var num = 10; <br />
+        function fn() { // 外部函数 <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num = 20; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;function fun() { // 内部函数 <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;fun(); <br />
+        } <br />
+        fn();
+    </p>
+    <p>结果是：20</p>
+    <p>这个内部函数会首先检查自己内部的函数，如果没有，返回上一级函数查找变量，如果还是没有，返回最上面查找变量，如果还没有，那就报错了</p>
+    <h3>案例：作用域链案例</h3>
+    <p>案例1：结果是几</p>
+    <p class="y">
+        function f1() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num = 123; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;function f2() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;f2(); <br />
+        } <br />
+        var num = 456; <br />
+        f1();
+    </p>
+    <p>结果是：123</p>
+    <p>案例2：结果是几</p>
+    <p class="y">
+        var a = 1; <br />
+        function fn1() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var a = 2; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var b = '22'; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;fn2(); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;function fn2 { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var a = 3; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fn3(); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function fn3() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var a = 4; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(a); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(b); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+        } <br />
+        fn1();
+    </p>
+    <h2>预解析</h2>
+    <p>JavaScript 代码是由浏览器中的 JavaScript 解析器来执行的。JavaScript 解析器在运行 JavaScript 代码的时候分为两步：预解析和代码执行。</p>
+    <p>我们 JS 引擎分为两步：预解析、代码执行</p>
+    <p>预解析就是 JS 引擎把 JS 里面所有的 var 还有 function 提升到当前作用域的最前面，然后进行代码执行，按照代码书写的顺序从上往下执行</p>
+    <p>预解析发呢为变量预解析（变量提升）和函数预解析（函数提升）</p>
+    <p>(1) 变量提升就是把所有的变量声明提升到当前的作用域最前面，不提升赋值操作</p>
+    <p class="y">
+        console.log(num); <br />
+        var num = 10;
+    </p>
+    <p>结果：undefind</p>
+    <p>此代码就相当于执行了这个代码：</p>
+    <p class="y">
+        var num; <br />
+        console.log(num); <br />
+        num = 10;
+    </p>
+    <p>num 被提升到前面去了</p>
+    <p>那么为什么这行代码会报错呢？</p>
+    <p class="y">
+        fun(); <br />
+        var fun = function() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(22); <br />
+        }
+    </p>
+    <p>结果：报错</p>
+    <p>因为这行代码就相当于执行了以下代码：</p>
+    <p class="y">
+        var fun; <br />
+        fun(); <br />
+        fun = function() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(22); <br />
+        }
+    </p>
+    <p>因为没有那个函数所以报错了</p>
+    <p>正确写法：</p>
+    <p class="y">
+        fun = function() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(22); <br />
+        } <br />
+        fun();
+    </p>
+    <p>(2) 函数提升就是把所有函数声明提升到当前作用域的最前面，不调用函数</p>
+    <p class="y">
+        fn(); <br />
+        function fn() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(11); <br />
+        }
+    </p>
+    <p>结果是：11</p>
+    <p>这就是函数提升</p>
+    <p>如果是直接赋值的形式:"var fun = function()" 就不支持提升</p>
+    <h3>案例：结果是几？</h3>
+    <p>案例1：</p>
+    <p class="y">
+        var num = 10; <br />
+        fun(); <br />
+        function fun() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num = 20; <br />
+        }
+    </p>
+    <p>结果是：20</p>
+    <p>相当于执行以下操作：</p>
+    <p class="y">
+        var num; <br />
+        function fun() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;num = 20; <br />
+        } <br />
+        num = 10; <br />
+        fun();
+    </p>
+    <p>结果是：undefined</p>
+    <p>案例2：</p>
+    <p class="y">
+        var num = 10; <br />
+        function fn() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num = 20; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        } <br />
+        fn()
+    </p>
+    <p>相当于执行以下代码：</p>
+    <p class="y">
+        var num; <br />
+        function fn() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var num; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;num = 20; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); <br />
+        } <br />
+        num = 10; <br />
+        fn();
+    </p>
+    <p>结果是：undefined 和 20</p>
+    <p>案例3：</p>
+    <p class="y">
+        f1(); <br />
+        console.log(c); <br />
+        console.log(b); <br />
+        console.log(a); <br />
+        function f1() { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;var a = b = c = 9; <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(a); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(b); <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(c); <br />
+        }
+    </p>
+    <p>结果：9 9 9 9 9 报错</p>
+    <button><a href="index3.html">下一节</a></button>
+</body>
+
+</html>

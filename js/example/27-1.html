@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筛选数组案例-方法二</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/yanse.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        // 将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中大于等于10的元素选出来，放入新数组。
+        // 声明一个新的数组用于存放新数据 newArr
+        // 遍历原来的旧数组，找出大于等于10的元素
+        // 一次追加给新数组 newArr
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

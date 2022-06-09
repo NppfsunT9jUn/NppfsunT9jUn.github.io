@@ -1,0 +1,46 @@
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未命名</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/yanse.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        .wrong {
+            color: red;
+        }
+
+        .right {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+    <script>
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+        ipt.onblur = function () {
+            if (this.value.length == 0) {
+                message.innerHTML = '您没有输入！请输入6~16位密码！';
+                message.className = 'wrong';
+            } else if (this.value.length < 6 || this.value.length > 16) {
+                message.innerHTML = '您输入的位数错误！请输入6~16位密码！';
+                message.className = 'wrong';
+            } else {
+                message.className = 'right';
+                message.innerHTML = '您输入的位数正确！';
+            }
+        }
+    </script>
+</body>
+
+</html>

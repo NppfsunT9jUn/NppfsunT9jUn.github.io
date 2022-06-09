@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecblog &bull; 风尘个人笔记网站，博客资源下载站</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!-- 网站图标 -->
+    <!-- 网站介绍 & 网站关键词 -->
+    <meta name="description" content="风尘#星刃/ 个人笔记网站，包含 CSS、HTML，个人博客网站，暂不开放个人博客网站。
+    联系QQ：1402662061@qq.com，包括一些其他的东西，欢迎前来访问！">
+    <meta name="Keywords" content="Fecblog, fecblog, 风尘#星刃/, 风尘, 星刃, 星刃BI, 笔记网站, 博客网站, 个人笔记,
+    个人博客, 1402662061, 140266, 62061, lianxi@fecmail.tk, fecblog.tk, www,fecblog.tk, 1383252, 风尘博客,
+    风尘笔记, 风尘星刃, 风尘资源下载站, 风尘资源站, 静态博客, 静态网站">
+    <style>
+        body {
+            transition: 0.3s;
+            box-sizing: border-box;
+        }
+
+        @media screen and (min-width: 0px) and (max-width: 500px) {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            .box {
+                border: 1px solid #f5f5f5;
+                background-color: #f5f5f5;
+                padding: 0 10px;
+            }
+
+            .box h1 {
+                margin: 10px 0;
+            }
+
+            .box h4 {
+                margin: 15px 0;
+            }
+
+            .box ul {
+                padding: 0;
+                list-style-type: none;
+            }
+
+            .box ul li a {
+                display: block;
+                padding: 10px 0;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            .box ul li a:link,
+            .box ul li a:visited {
+                color: #000000;
+            }
+
+            .box ul li a:hover,
+            .box ul li a:active {
+                background-color: #f1f1f1;
+                color: #000000;
+            }
+
+            .bottom {
+                background-color: #000;
+                color: #fff;
+                text-align: center;
+                font-size: 12.5px;
+                padding: 5px 6px;
+            }
+
+            .bottom p {
+                margin: 5px 0;
+            }
+
+            .bottom p a {
+                text-decoration: none;
+            }
+
+            .bottom p a:link,
+            .bottom p a:visited {
+                color: #f5f5f5;
+            }
+
+            .bottom p a:hover,
+            .bottom p a:active {
+                color: #ffa500;
+            }
+        }
+
+        @media screen and (min-width: 501px) and (max-width: 800px) {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            .box {
+                background-color: #f5f5f5;
+            }
+
+            .box h1 {
+                font-size: 42px;
+                background-color: #000000;
+                border: 1px solid #000000;
+                color: #fff;
+                margin: 0;
+                padding: 23px 0px;
+            }
+
+            .box h4 {
+                display: none;
+            }
+
+            .box ul {
+                margin: 0;
+                padding: 0px;
+                list-style-type: none;
+            }
+
+            .box ul li a {
+                display: block;
+                padding: 15px 10px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .box ul li a:link,
+            .box ul li a:visited {
+                color: #000000;
+            }
+
+            .box ul li a:hover,
+            .box ul li a:active {
+                background-color: #f1f1f1;
+                color: #000000;
+            }
+
+            .bottom {
+                background-color: tomato;
+                color: #fff;
+                text-align: center;
+                font-size: 15px;
+                padding: 5px 20px;
+            }
+
+            .bottom p {
+                margin: 5px 0;
+            }
+
+            .bottom p a {
+                text-decoration: none;
+            }
+
+            .bottom p a:link,
+            .bottom p a:visited {
+                color: #f5f5f5;
+                font-weight: 700;
+            }
+
+            .bottom p a:hover,
+            .bottom p a:active {
+                color: #fff;
+            }
+        }
+
+        @media screen and (min-width: 801px) {
+            body {
+                padding: 0 20%;
+                margin: 0;
+                background-image: url("bj.jpg");
+                background-attachment: fixed;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+
+            .box {
+                background-color: #f5f5f5;
+                opacity: 0.93;
+            }
+
+            .box h1 {
+                font-size: 42px;
+                background-color: #0f0f0f;
+                border: 1px solid #0f0f0f;
+                color: #fff;
+                margin: 0;
+                padding: 23px 0px;
+            }
+
+            .box h4 {
+                display: none;
+            }
+
+            .box ul {
+                margin: 0;
+                padding: 0px;
+                list-style-type: none;
+            }
+
+            .box ul li a {
+                display: block;
+                padding: 15px 10px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .box ul li a:link,
+            .box ul li a:visited {
+                color: #000000;
+            }
+
+            .box ul li a:hover,
+            .box ul li a:active {
+                background-color: #f1f1f1;
+                color: #000000;
+            }
+
+            .bottom {
+                background-color: #0f0f0f;
+                text-align: center;
+                font-size: 13.8px;
+                padding: 15px 20px;
+                opacity: 0.93;
+            }
+
+            .bottom p {
+                margin: 5px 0;
+                color: #fff;
+            }
+
+            .bottom p a {
+                text-decoration: none;
+            }
+
+            .bottom p a:link,
+            .bottom p a:visited {
+                color: #f5f5f5;
+            }
+
+            .bottom p a:hover,
+            .bottom p a:active {
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1 align="center">Fecblog 欢迎您！</h1>
+        <ul>
+            <li><a href="js/index.html">JS笔记</a></li>
+            <li><a href="css/index.html">CSS笔记</a></li>
+            <li><a href="web/index.html">静态博客(暂不开放)</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <p>© 2022 Fecblog 本站内原创内容版权属于 风尘#星刃/ <br /> 未经允许禁止转载。</p>
+        <p>email: <a href='mailto:lianxi@fecmail.tk'>lianxi@fecmail.tk</a>
+            <br />Please website embody! Thank you!
+        </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+@font-face {
+    font-display: swap;
+    font-family: "open sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans Regular"), local("OpenSans-Regular"), url(setup/open-sans-v15-greek-ext_vietnamese_cyrillic-ext_greek_latin-ext_latin_cyrillic-regular.woff2) format("woff2"), url(setup/open-sans-v15-greek-ext_vietnamese_cyrillic-ext_greek_latin-ext_latin_cyrillic-regular.woff) format("woff")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "open sans";
+    font-style: italic;
+    font-weight: 400;
+    src: local("Open Sans Italic"), local("OpenSans-Italic"), url(setup/open-sans-v15-greek-ext_vietnamese_cyrillic-ext_greek_latin-ext_latin_cyrillic-italic.woff2) format("woff2"), url(setup/open-sans-v15-greek-ext_vietnamese_cyrillic-ext_greek_latin-ext_latin_cyrillic-italic.woff) format("woff")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "open sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Open Sans Bold"), local("OpenSans-Bold"), url(setup/open-sans-v15-greek-ext_vietnamese_cyrillic-ext_greek_latin-ext_latin_cyrillic-700.woff2) format("woff2"), url(setup/open-sans-v15-greek-ext_vietnamese_cyrillic-ext_greek_latin-ext_latin_cyrillic-700.woff) format("woff")
+}
+
+@media screen {
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    html {
+        background: #000;
+        color: #ccc;
+        font: 87.5%/1.7 "open sans", optima, arial, sans-serif;
+        text-align: center
+    }
+
+    html[lang=de] #ad:before {
+        content: "Anzeige"
+    }
+
+    html[lang=en] #ad:before {
+        content: "Advertisement"
+    }
+
+    html[lang=es] #ad:before {
+        content: "Anuncio"
+    }
+
+    html[lang=fr] #ad:before {
+        content: "Publicité"
+    }
+
+    #show, body {
+        margin: auto
+    }
+
+    body {
+        max-width: 620px;
+        padding: 1em
+    }
+
+    h2, p {
+        margin: 0 .5em
+    }
+
+    p+p {
+        text-indent: 1em
+    }
+
+    h1, h2 {
+        font-size: 1rem;
+        font-weight: 400
+    }
+
+    #show, h1 {
+        width: 620px
+    }
+
+    h1 {
+        background: url(img/logo.jpg) no-repeat;
+        height: 366px;
+        margin: .5em 0 0;
+        text-indent: -999em
+    }
+
+    ul {
+        margin: .5em 0 .5em 2em
+    }
+
+    [dir=rtl] ul {
+        margin: .5em 2em .5em 0
+    }
+
+    a, em, kbd, strong {
+        color: #fff
+    }
+
+    cite, em {
+        font-style: normal
+    }
+
+    small {
+        font-size: inherit;
+        line-height: inherit
+    }
+
+    kbd {
+        font-family: "open sans", optima, arial, sans-serif
+    }
+
+    #lang {
+        list-style: none;
+        margin: .5em 2em 1em
+    }
+
+    #lang li {
+        display: inline
+    }
+
+    #show {
+        text-align: left
+    }
+
+    [dir=rtl] #show {
+        text-align: right
+    }
+
+    #whws {
+        background: url(img/tape.png) repeat-y top;
+        font-size: 100cm;
+        height: 2840em;
+        line-height: 1;
+        margin: 42px 0
+    }
+
+    #hades {
+        position: relative
+    }
+
+    #hades>p:last-child {
+        background: url(img/end.jpg) no-repeat bottom;
+        padding-bottom: 179px
+    }
+
+    #ad, #ad:before {
+        display: block
+    }
+
+    #ad {
+        padding: 0 0 .5em;
+        text-decoration: none
+    }
+
+    #ad:before {
+        color: #aaa;
+        content: "⚐";
+        font-size: .79rem;
+        line-height: 1.45
+    }
+}
+
+@media screen and (max-width:648px) {
+    #show, h1 {
+        width: 465px
+    }
+
+    h1 {
+        background-size: 465px 274px;
+        height: 274px
+    }
+}
+
+@media screen and (max-width:647px) {
+    #hades>p:last-child {
+        background: none;
+        padding-bottom: 0
+    }
+}
+
+@media screen and (max-width:493px) {
+    #show, h1 {
+        width: 310px
+    }
+
+    h1 {
+        background-size: 310px 183px;
+        height: 183px
+    }
+}
+
+@media print {
+    * {
+        background: #fff;
+        border: 0;
+        color: #000;
+        font-size: 1em;
+        text-decoration: none
+    }
+
+    html[lang=ar] #whws:after {
+        content: "حفظ 18.94 كم من الميزانيه الواجبه"
+    }
+
+    html[lang=bg] #whws:after {
+        content: "18,94 километра …"
+    }
+
+    html[lang=cs] #whws:after {
+        content: "Vynechávám 18,94 kilometrů: Šetřete papírem."
+    }
+
+    html[lang=da] #whws:after {
+        content: "18,94 kilometer …"
+    }
+
+    html[lang=de] #whws:after {
+        content: "18,94 Kilometer Papierkosten gespart."
+    }
+
+    html[lang=el] #whws:after {
+        content: "18,94 χιλιόμετρα …"
+    }
+
+    html[lang=en] #whws:after {
+        content: "Saved 18.94 kilometers from the office budget."
+    }
+
+    html[lang=es] #whws:after {
+        content: "18,94 kilómetros más adelante …"
+    }
+
+    html[lang=fa] #whws:after {
+        content: "18,94 کیلومتر از راه بودجه اداره ذخیره شد."
+    }
+
+    html[lang=fi] #whws:after {
+        content: "18,94 kilometriä …"
+    }
+
+    html[lang=fr] #whws:after {
+        content: "18,94 kilomètres …"
+    }
+
+    html[lang=hi] #whws:after {
+        content: "ऑफिस के बजट से १८.९४ किलोमीटर बचाया गया है."
+    }
+
+    html[lang=hr] #whws:after {
+        content: "18,94 kilometara …"
+    }
+
+    html[lang=hu] #whws:after {
+        content: "18,94 kilométer …"
+    }
+
+    html[lang=id] #whws:after {
+        content: "18,94 kilometer …"
+    }
+
+    html[lang=ig] #whws:after {
+        content: "A Zọpụtara 18,94 kilomita site na ọrụ ego."
+    }
+
+    html[lang=it] #whws:after {
+        content: "Risparmiati 18,94 kilometri di budget d’ufficio."
+    }
+
+    html[lang=ja] #whws:after {
+        content: "オフィスバジェットから18.94 キロで保存されました。"
+    }
+
+    html[lang=ko] #whws:after {
+        content: "18.94 km …"
+    }
+
+    html[lang=ms] #whws:after {
+        content: "Dilepasi 18.94 kilometer …"
+    }
+
+    html[lang=ne] #whws:after {
+        content: "१८.९४ पछि …"
+    }
+
+    html[lang=nl] #whws:after, html[lang=no] #whws:after {
+        content: "18,94 kilometer …"
+    }
+
+    html[lang=pa] #whws:after {
+        content: "ਦਫ਼ਤਰ ਦੇ ਬਜਟ ਤੋਂ 18,94 ਕਿਲੋਮੀਟਰ ਬਚਾਇਆ ਹੈ"
+    }
+
+    html[lang=pl] #whws:after {
+        content: "18,94 km …"
+    }
+
+    html[lang=pt] #whws:after {
+        content: "18,94 quilômetros …"
+    }
+
+    html[lang=ro] #whws:after {
+        content: "18,94 kilometri …"
+    }
+
+    html[lang=ru] #whws:after {
+        content: "18,94 километров …"
+    }
+
+    html[lang=sk] #whws:after {
+        content: "18,94 kilometov: To je kopa papiera na tlač."
+    }
+
+    html[lang=sr] #whws:after {
+        content: "18,94 kilometara …"
+    }
+
+    html[lang=sv] #whws:after {
+        content: "18,94 kilometer …"
+    }
+
+    html[lang=te] #whws:after {
+        content: "18.94 kilometers …"
+    }
+
+    html[lang=th] #whws:after {
+        content: "บันทึก 18.94 กิโลเมตร จากงบประมาณของสำนักงาน"
+    }
+
+    html[lang=tl] #whws:after {
+        content: "18.94 kilometro na ang nakalipas…"
+    }
+
+    html[lang=tr] #whws:after {
+        content: "18,94 kilometre …"
+    }
+
+    html[lang=uk] #whws:after {
+        content: "Збережені 18,94 кілометра з офісного бюджету."
+    }
+
+    html[lang=vi] #whws:after {
+        content: "18,94 km đã tiết kiệm được từ quỹ văn phòng."
+    }
+
+    html[lang=yo] #whws:after {
+        content: "Din kilomita 18,94 ku ninu inawo ofisi."
+    }
+
+    html[lang=zh] #whws:after {
+        content: "18.94千米 …"
+    }
+
+    #whws:after {
+        font-weight: 700
+    }
+
+    #ad, #lang {
+        display: none
+    }
+}
